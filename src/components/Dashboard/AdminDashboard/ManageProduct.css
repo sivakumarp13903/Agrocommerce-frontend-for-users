@@ -1,0 +1,93 @@
+.manage-product-container {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.manage-product-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.manage-product-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.manage-product-table th, 
+.manage-product-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.manage-product-table th {
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  font-weight: bold;
+}
+
+.manage-product-table td {
+  color: #222;
+  font-size: 16px;
+}
+
+.manage-product-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.manage-product-edit-btn {
+  background-color: #ffc107;
+  border: none;
+  padding: 8px 12px;
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.manage-product-delete-btn {
+  background-color: #dc3545;
+  border: none;
+  padding: 8px 12px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.manage-product-modal .modal-content {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.manage-product-modal .modal-header {
+  border-bottom: none;
+}
+
+.manage-product-modal .modal-footer {
+  border-top: none;
+}
+
+.manage-product-modal input,
+.manage-product-modal textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.mt-4{
+  margin-left: 20%;
+  background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') 
+    no-repeat center center/cover;
+}
