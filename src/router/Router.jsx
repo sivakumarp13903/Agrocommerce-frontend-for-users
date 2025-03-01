@@ -14,7 +14,6 @@ import WorkerDashboard from "../components/Dashboard/WorkerDashboard/WorkerDashb
 import WorkerNavigation from "../components/Dashboard/WorkerDashboard/WorkerNavigation";
 import WorkProgressByFarmer from "../components/EmployeeManagement/Dashboard/SlotAllotment/WorkProgressByFarmer";
 import WorkProgressByWorker from "../components/Dashboard/WorkerDashboard/WorkProgressByWorker";
-import PaymentProgressByWorker from "../components/Dashboard/WorkerDashboard/paymentProgressByWorker";
 import PaymentProgressByFarmer from "../components/EmployeeManagement/Dashboard/PaymentProcess/PaymentProcessByFarmer";
 import BuyerDashboard from "../components/Dashboard/BuyerDashboard/BuyerDashboard";
 import CommodityList from "../components/Dashboard/BuyerDashboard/CommodityList";
