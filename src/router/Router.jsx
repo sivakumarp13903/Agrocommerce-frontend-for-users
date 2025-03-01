@@ -16,6 +16,7 @@ import WorkProgressByFarmer from "../components/EmployeeManagement/Dashboard/Slo
 import WorkProgressByWorker from "../components/Dashboard/WorkerDashboard/WorkProgressByWorker";
 import PaymentProgressByFarmer from "../components/EmployeeManagement/Dashboard/PaymentProcess/PaymentProcessByFarmer";
 import BuyerDashboard from "../components/Dashboard/BuyerDashboard/BuyerDashboard";
+import WorkerDashboard from "../components/Dashboard/WorkerDashboard/WorkerDashboard";
 import CommodityList from "../components/Dashboard/BuyerDashboard/CommodityList";
 import Cart from "../components/Dashboard/BuyerDashboard/Cart";
 import Orders from "../components/Dashboard/BuyerDashboard/Orders";
