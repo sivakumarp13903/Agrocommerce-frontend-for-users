@@ -10,12 +10,12 @@ import PostJob from "../components/EmployeeManagement/Dashboard/PostJob/PostJob"
 import AvailableJobs from "../components/Dashboard/WorkerDashboard/AvailableJobs";
 import AppliedJobs from "../components/Dashboard/WorkerDashboard/AppliedJobs";
 import PaymentStatus from "../components/Dashboard/WorkerDashboard/PaymentStatus";
-import WorkerDashboard from "../components/Dashboard/WorkerDashboard/WorkerDashboard";
+import WorkerDashboard from "../components/Dashboard/WorkerDashboard/WorkerDashboard"; // ✅ Removed duplicate
 import WorkerNavigation from "../components/Dashboard/WorkerDashboard/WorkerNavigation";
 import WorkProgressByFarmer from "../components/EmployeeManagement/Dashboard/SlotAllotment/WorkProgressByFarmer";
 import WorkProgressByWorker from "../components/Dashboard/WorkerDashboard/WorkProgressByWorker";
-import PaymentProgressByWorker from "../components/Dashboard/WorkerDashboard/paymentProgressByWorker";
 import PaymentProgressByFarmer from "../components/EmployeeManagement/Dashboard/PaymentProcess/PaymentProcessByFarmer";
+import PaymentProgressByWorker from "../components/Dashboard/WorkerDashboard/PaymentProgressByWorker"; // ✅ Check if this file exists
 import BuyerDashboard from "../components/Dashboard/BuyerDashboard/BuyerDashboard";
 import CommodityList from "../components/Dashboard/BuyerDashboard/CommodityList";
 import Cart from "../components/Dashboard/BuyerDashboard/Cart";
@@ -24,21 +24,17 @@ import Payments from "../components/Dashboard/BuyerDashboard/Payments";
 import { CartContext } from "../context/CartContext";
 import AdminDashboard from "../components/Dashboard/AdminDashboard/AdminDashboard";
 import AddCommodity from "../components/Dashboard/AdminDashboard/AddCommodity";
-import Sidebar from "../components/Dashboard/AdminDashboard/Sidebar"; // Adjust path if needed
+import Sidebar from "../components/Dashboard/AdminDashboard/Sidebar"; 
 import ManageProduct from "../components/Dashboard/AdminDashboard/ManageProduct";
 import ManageOrders from "../components/Dashboard/AdminDashboard/ManageOrders";
 import EditJob from "../components/EmployeeManagement/Dashboard/EditJob/EditJob";
 import FarmerJobs from "../components/EmployeeManagement/Dashboard/EditJob/FarmerJobs";
 import ManageUsers from "../components/Dashboard/AdminDashboard/ManageUsers";
 import AddUser from "../components/Dashboard/AdminDashboard/AddUser";
-// import ReportGeneration from "../components/Dashboard/AdminDashboard/GenerateReport";
 
-
-/* Farmer Employee Management Layout */
+// ✅ Farmer Employee Management Layout
 const FarmerEmpLayout = () => {
-  const [farmerId, setFarmerId] = useState(
-    localStorage.getItem("farmerId") || null
-  );
+  const [farmerId, setFarmerId] = useState(localStorage.getItem("farmerId") || null);
 
   useEffect(() => {
     if (!farmerId) console.warn("Farmer ID is missing. Please log in again.");
@@ -52,11 +48,9 @@ const FarmerEmpLayout = () => {
   );
 };
 
-/* Worker Dashboard Layout */
+// ✅ Worker Dashboard Layout
 const WorkerLayout = () => {
-  const [workerId, setWorkerId] = useState(
-    localStorage.getItem("workerId") || null
-  );
+  const [workerId, setWorkerId] = useState(localStorage.getItem("workerId") || null);
 
   useEffect(() => {
     if (!workerId) console.warn("Worker ID is missing. Please log in again.");
@@ -70,11 +64,9 @@ const WorkerLayout = () => {
   );
 };
 
-/* Buyer Layout */
+// ✅ Buyer Layout
 const BuyerLayout = () => {
-  const [buyerId, setBuyerId] = useState(
-    localStorage.getItem("buyerId") || null
-  );
+  const [buyerId, setBuyerId] = useState(localStorage.getItem("buyerId") || null);
 
   useEffect(() => {
     if (!buyerId) console.warn("Buyer ID is missing. Please log in again.");
@@ -88,20 +80,20 @@ const BuyerLayout = () => {
   );
 };
 
-// Admin layout
+// ✅ Admin Layout
 const AdminLayout = () => {
-    return (
-      <div className="admin-layout">
-        <Sidebar />
-        <div className="admin-content">
-          <Outlet /> {/* Displays child routes */}
-        </div>
+  return (
+    <div className="admin-layout">
+      <Sidebar />
+      <div className="admin-content">
+        <Outlet /> 
       </div>
-    );
-  };
+    </div>
+  );
+};
 
+// ✅ Routes Setup
 const AppRoutes = () => {
-  // ✅ Ensure the context provider gets a value
   const [cart, setCart] = useState([]);
 
   const addToCart = (item) => {
@@ -118,7 +110,7 @@ const AppRoutes = () => {
         {/* Farmer Dashboard */}
         <Route path="/dashboard" element={<FarmerDashboard />} />
 
-        {/* Farmer Employee Management Routes */}
+        {/* Farmer Employee Management */}
         <Route path="/recruit-management" element={<FarmerEmpLayout />}>
           <Route path="application" element={<ApplicationsList />} />
           <Route path="workprogress" element={<WorkProgressByFarmer />} />
@@ -127,32 +119,22 @@ const AppRoutes = () => {
           <Route path="edit-job" element={<FarmerJobs />} />
         </Route>
 
-        {/* Worker Dashboard Routes */}
+        {/* Worker Dashboard */}
         <Route path="/worker-dashboard" element={<WorkerLayout />}>
           <Route path="jobs" element={<AvailableJobs />} />
           <Route path="applied-jobs" element={<AppliedJobs />} />
           <Route path="accepted-jobs" element={<WorkProgressByWorker />} />
-          <Route path="payments" element={<PaymentProgressByWorker />} />
+          <Route path="payments" element={<PaymentProgressByWorker />} /> {/* ✅ Ensure this file exists */}
         </Route>
 
-        {/* Buyer Dashboard Routes */}
-        {/* <Route path="/buyer-dashboard" element={<BuyerLayout />}>
-                    <Route path="commodities" element={<CommodityList />} />
-                    <Route path="cart" element={<Cart />} />
-                    <Route path="orders" element={<Orders />} />
-                    <Route path="payments" element={<Payments />} />
-                </Route> */}
-
-        {/* Admin Dashboard Routes */}
-        {/* Admin Routes */}
+        {/* Admin Dashboard */}
         <Route path="/admin-dashboard" element={<AdminLayout />}>
           <Route index element={<AdminDashboard />} />
           <Route path="add-product" element={<AddCommodity />} />
           <Route path="manage-products" element={<ManageProduct />} />
           <Route path="manage-orders" element={<ManageOrders />} />
           <Route path="manage-users" element={<ManageUsers />} />
-          <Route path="add-users" element={<AddUser/>}/>
-          {/* <Route path="manage-reports" element={<ReportGeneration />} /> */}
+          <Route path="add-users" element={<AddUser />} />
         </Route>
       </Routes>
     </CartContext.Provider>
